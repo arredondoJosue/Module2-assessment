@@ -95,6 +95,19 @@ function canWeDeliverTwo(zipCode) {
 canWeDeliverTwo(1234)
 canWeDeliverTwo(85206)
 
+/*
+
+const canWeDeliverTwo = zipCode = {
+    deliveryAreaZipCodes.forEach(zip => {
+        if(zipCode === zip){
+            return 'We can serve you.'
+        }
+    })
+    return 'Sorry, you are out of our range of service.'
+}
+
+*/
+
 //////////////////PROBLEM 3////////////////////
 /* 
     Below is an array of objects that have some
@@ -130,9 +143,16 @@ const deals = [
 
 //CODE HERE
 
-const deal = deals.filter(percent => percent.title.replace('15%', '10%'))
-// deal.title.replace('15%', '10%')
-// console.log(deal);
+deals[0].title = deals[0].title.replace('15%', '10%')
+console.log(deals);
+
+// const dealStr = deals[0].title
+// console.log(dealStr);
+// const deal = dealStr.replace('15%', '10%')
+
+// deals[0].title = deal
+
+// console.log(deals);
 
 
 /*
@@ -149,3 +169,5 @@ const deal = deals.filter(percent => percent.title.replace('15%', '10%'))
 */
 
 //CODE HERE
+deals[1].desc = deals[1].desc.replace('March', 'April').trim()
+console.log(deals);

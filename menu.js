@@ -88,7 +88,7 @@ console.log(price);
 let {category} = pizza
 console.log(category);
 
-//////////////////PROBLEM 3////////////////////
+//////////////////***PROBLEM 3***////////////////////
 /* 
     Create an array with about 5 objects in it.
     The objects should mimic the `pizza` object.
@@ -105,37 +105,37 @@ console.log(category);
 let foodArr = [
     {
     name: 'Pep',
-    price: Number(5),
+    price: 5,
     category: 'Yummy',
-    popularity: Number(500),
-    rating: Number(9000),
+    popularity: 500,
+    rating: 9000,
     tags: ['cheese', 'meat']},
 {
     name: 'Bacon',
-    price: Number(6),
+    price: 6,
     category: 'Yummy',
-    popularity: Number(500),
-    rating: Number(9000),
+    popularity: 500,
+    rating: 9000,
     tags: ['cheese', 'meat']
 }, 
 {
     name: 'Nothing',
-    price: Number(100),
+    price: 100,
     category: 'Gross',
-    popularity: Number(1),
-    rating: Number(1),
+    popularity: 1,
+    rating: 1,
     tags: ['bread', 'why']
 },
 {
     name: 'Cheese',
-    price: Number(1),
+    price: 1,
     category: 'Gross',
-    popularity: Number(3),
-    rating: Number(4),
+    popularity: 3,
+    rating: 4,
     tags: ['cheese', 'vegan']
 }]
 
-//////////////////PROBLEM 4////////////////////
+//////////////////*******PROBLEM 4*****////////////////////
 /* 
     Let's filter the food objects according
     to their tags.
@@ -149,16 +149,11 @@ let foodArr = [
 
 //CODE HERE
 
-// const tagging = foodArr.filter(search => search.tags === 'meat')
-// const tagging = (arrObj, callback) => arrObj.forEach(foodArr => foodArr.tags === 'cheese' ? callback(foodArr) : null)
-// console.log(tagging);
+const filteredFood = foodArr.filter(search => search.tags.includes('meat'))
+console.log(filteredFood);
 
 
-const filteredFood = foodArr.filter(search => search.tags === 'meat')
-// console.log(filteredFood);
-
-
-//////////////////PROBLEM 5////////////////////
+//////////////////***PROBLEM 5***////////////////////
 /* 
     Now let's write a function that's a little
     more flexible than just filtering for one
@@ -190,7 +185,7 @@ const filteredFood = foodArr.filter(search => search.tags === 'meat')
         if it is, return objects whose value for the given
         property is greater than the `number` passed in
 
-        If the type isn't `below`, return objects whose
+        If the type is `below`, return objects whose
         value for the given property is less than the 
         `number` passed in
     
@@ -210,7 +205,16 @@ const thing = {
 
 //CODE HERE
 
-const filterByProperty = (property, number, type) => foodArr.filter(elem => elem.type === 'above' ? cancelIdleCallback(foodArr) : null)
+const filterByProperty = (property, number, type) => {
+    let filteredArr = foodArr.filter(elem => {
+        if (type === 'above'){
+            return elem[property] > number
+        }else if (type === 'below'){
+            return elem[property] < number
+        }
+    })
+    return filteredArr
+}
 
 
 
@@ -223,5 +227,4 @@ const filterByProperty = (property, number, type) => foodArr.filter(elem => elem
 
 //CODE HERE
 
-filterByProperty(3, 5, 'above')
-console.log(filterByProperty);
+console.log(filterByProperty('price', 5, 'above'));

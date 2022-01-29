@@ -38,7 +38,7 @@ const cart = [
 const summedPrice = cart.reduce((acc, curr) => acc + curr.price, 0)
 console.log(summedPrice);
 
-//////////////////PROBLEM 2////////////////////
+//////////////////***PROBLEM 2***////////////////////
 /*  
     Write a function called `calcFinalPrice` that
     can take in `cartTotal`,`couponValue`,
@@ -55,8 +55,8 @@ console.log(summedPrice);
 
 //CODE HERE
 
-const calcFinalPrice = (cartTotal, couponValue ,tax) => cartTotal * tax - couponValue
-
+const calcFinalPrice = (cartTotal, couponValue ,tax) => (cartTotal * (1 + tax) - couponValue)
+// console.log(calcFinalPrice(10, 2, .06));
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -96,7 +96,7 @@ tip -  if they tip at least 10%. Check to know how much attention to give them. 
 //CODE HERE
 const customer = {
     name: 'Jacob',
-    allergies: 'No', 
+    allergies: false, 
     kids: 5,
     tip: true
 }
